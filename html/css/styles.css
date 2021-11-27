@@ -6993,6 +6993,10 @@ textarea.form-control-lg {
   height: 25% !important;
 }
 
+.h-45{
+  height: 45% !important;
+}
+
 .h-50 {
   height: 50% !important;
 }
@@ -10581,6 +10585,9 @@ textarea.form-control-lg {
     padding-left: 3rem !important;
   }
 
+  .card-text{
+    font-size: 3rem;
+  }
   .text-xl-start {
     text-align: left !important;
   }
