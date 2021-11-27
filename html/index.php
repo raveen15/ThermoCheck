@@ -1,3 +1,3 @@
 <?php
- echo("Hi...this is our webpage with domain name !");
+ echo("Hi! this is our webpage with domain name !");
 ?>
