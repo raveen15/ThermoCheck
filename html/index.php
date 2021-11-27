@@ -1,2 +1,2 @@
 <?php
-header("location: index.html");
+require index.html
