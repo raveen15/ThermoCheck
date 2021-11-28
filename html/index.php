@@ -48,14 +48,14 @@
                         </ol>
                         <div class="row">
                             <div class="col-md-2">
-                                <div class="card bg-primary text-white text-center mb-3 h-45">
+                                <div class="card bg-primary text-white text-center mb-3 h-45" id="tempCard">
                                     <div class="card-body">
                                         Current Temperature
 
                                         <p class="text card-text" id="currentTemperature">°C</p>
                                     </div>
                                 </div>
-                                <div class="card bg-primary text-white text-center mb-3 h-45">
+                                <div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard">
                                     <div class="card-body">
                                         Current Humidity
                                         <p class="text card-text" id="currentHumidity">%</p>
