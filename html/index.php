@@ -56,9 +56,7 @@ function CallAPI($method, $url, $data = false)
         <a class="navbar-brand" href="index.html">ThermoCheck</a>
     </nav>
     <div id="layoutSidenav_content">
-        <?php
-
-        echo '<main>
+        <main>
             <div class="container-fluid p-4 my-5">
                 <div class="card bg-white m-4 px-3 shadow">
                     <h1 class="mt-4">Sensor 1
@@ -105,8 +103,7 @@ function CallAPI($method, $url, $data = false)
                     </div>
                 </div>
             </div>
-        </main>';
-        ?>
+        </main>
 
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
