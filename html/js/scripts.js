@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 setTempAndHumid()
-setInterval(function () { setTempAndHumid() }, 10000);
+setInterval(function () { setTempAndHumid() }, 1000);
 /*
 
 // Set new default font family and font color to mimic Bootstrap's default styling
