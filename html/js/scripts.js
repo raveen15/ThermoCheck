@@ -89,7 +89,7 @@ async function setTempAndHumid() {
     const ros_temphumi_URL = "https://ros-temphumid.herokuapp.com/?format=json"
     const x = "b3dhaXM6YWRtaW4=";
     var request = new XMLHttpRequest();
-    request.open("GET", ros_temphumi_URL, false); // false for synchronous request
+    request.open("GET", ros_temphumi_URL, true); // false for synchronous request
     request.setRequestHeader("Authorization", "Basic " + x)
     request.send(null);
     var response = JSON.parse(request.responseText)
