@@ -20,65 +20,65 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand" href="index.html">ThermoCheck</a>
     </nav>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <div class="card bg-white m-3 px-3 shadow">
-                        <h1 class="mt-4">Sensor 1
-                        </h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Location of Sensor 1 </li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <div class="card bg-primary text-white text-center mb-3 h-45" id="tempCard">
-                                    <div class="card-body">
-                                        Current Temperature
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid p-4 m-3">
+                <div class="card bg-white m-3 px-3 shadow">
+                    <h1 class="mt-4">Sensor 1
+                    </h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Location of Sensor 1 </li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div class="card bg-primary text-white text-center mb-3 h-45" id="tempCard">
+                                <div class="card-body">
+                                    Current Temperature
 
-                                        <p class="text card-text" id="currentTemperature">°C</p>
-                                    </div>
-                                </div>
-                                <div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard">
-                                    <div class="card-body">
-                                        Current Humidity
-                                        <p class="text card-text" id="currentHumidity">%</p>
-                                    </div>
+                                    <p class="text card-text" id="currentTemperature">°C</p>
                                 </div>
                             </div>
-                            <div class="col-md-5 h-100">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Temperature History
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                    </div>
+                            <div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard">
+                                <div class="card-body">
+                                    Current Humidity
+                                    <p class="text card-text" id="currentHumidity">%</p>
                                 </div>
                             </div>
-                            <div class="col-md-5 h-100">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        Humidity History
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                    </div>
+                        </div>
+                        <div class="col-md-5 h-100">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-area me-1"></i>
+                                    Temperature History
+                                </div>
+                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 h-100">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-area me-1"></i>
+                                    Humidity History
+                                </div>
+                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
+        </main>
 
-            <footer class="py-4 bg-light mt-auto">
-                <div class="container-fluid px-4">
-                    <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; ROS Enterprises 2021</div>
-                    </div>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; ROS Enterprises 2021</div>
                 </div>
-            </footer>
+            </div>
+        </footer>
 
-        </div>
+    </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js">
