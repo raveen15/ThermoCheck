@@ -94,7 +94,7 @@ async function setTempAndHumid() {
     var response = JSON.parse(request.responseText)
     var currentTemperature = response["temperature"];
     var currentHumid = response["humidity"];
-    console.log("tick");
+    console.log(response);
     //change color for bad temp/humid
     if (currentTemperature < 250) {
         //less than 250 degrees
