@@ -98,7 +98,7 @@ async function setTempAndHumid() {
         var subtitle = resp["location"];
         var currentTemperature = resp["temperature"];
         var currentHumid = resp["humidity"];
-        console.log(resp);
+        console.log(title, subtitle, currentHumid, currentTemperature);
         //change color for bad temp/humid
         if (currentTemperature < 250) {
             //less than 250 degrees
