@@ -97,44 +97,35 @@ async function setTempAndHumid() {
         var title = resp["name"];
         var subtitle = resp["location"];
         var currentTemperature = resp["temperature"];
+        var tempClass = "bg-primary";
         var currentHumid = resp["humidity"];
+        var humidClass = "bg-primary";
         console.log(title, subtitle, currentHumid, currentTemperature);
         //change color for bad temp/humid
         if (currentTemperature < 250) {
             //less than 250 degrees
-            document.getElementById("tempCard").classList.add("bg-success")
-            document.getElementById("tempCard").classList.remove("bg-warning")
-            document.getElementById("tempCard").classList.remove("bg-danger")
+            tempClass = "bg-success"
         } else if (currentTemperature >= 250 && currentTemperature < 300) {
             //greater than 250 degrees but less than 300
-            document.getElementById("tempCard").classList.add("bg-warning")
-            document.getElementById("tempCard").classList.remove("bg-success")
-            document.getElementById("tempCard").classList.remove("bg-danger")
+            tempClass = "bg-warning"
         } else {
             //greater than 300 degrees
-            document.getElementById("tempCard").classList.add("bg-danger")
-            document.getElementById("tempCard").classList.remove("bg-warning")
-            document.getElementById("tempCard").classList.remove("bg-success")
+            tempClass = "bg-danger"
         }
         if (currentHumid < 50) {
             //less than  %
-            document.getElementById("humidCard").classList.add("bg-success")
-            document.getElementById("humidCard").classList.remove("bg-warning")
-            document.getElementById("humidCard").classList.remove("bg-danger")
+            humidClass = "bg-success"
         } else if (currentHumid >= 50 && currentHumid < 75) {
             //greater than  but less than 
-            document.getElementById("humidCard").classList.add("bg-warning")
-            document.getElementById("humidCard").classList.remove("bg-success")
-            document.getElementById("humidCard").classList.remove("bg-danger")
+            humidClass = "bg-warning"
         } else {
             //greater than 
-            document.getElementById("humidCard").classList.add("bg-danger")
-            document.getElementById("humidCard").classList.remove("bg-warning")
-            document.getElementById("humidCard").classList.remove("bg-success")
+            humidClass = "bg-danger"
         }
         //set value to currtemp card
-        innerHTML += '<div class="card bg-white m-4 px-3 shadow"><h1 class="mt-4">' + title + '</h1><ol class="breadcrumb mb-4"><li class="breadcrumb-item active">' + subtitle + ' </li></ol><div class="row"><div class="col-md-2"><div class="card bg-primary-white text-center mb-3 h-45" id="tempCard"><div class="card-body">Current Temperature<p class="text card-text" id="currentTemperature">' + currentTemperature + '°C</p></div></div><div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard"><div class="card-body">Current Humidity<p class="text card-text" id="currentHumidity">' + currentHumid + '%</p></div></div></div><div class="col-md-5 h-100"><div class="card mb-4"><div class="card-header"><i class="fas fa-chart-area me-1"></i>Temperature History</div><div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div></div></div><div class="col-md-5 h-100"><div class="card mb-4"><div class="card-header"><i class="fas fa-chart-area me-1"></i>Humidity History</div><div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div></div></div></div></div>';
+        innerHTML += '<div class="card bg-white m-4 px-3 shadow"><h1 class="mt-4">' + title + '</h1><ol class="breadcrumb mb-4"><li class="breadcrumb-item active">' + subtitle + ' </li></ol><div class="row"><div class="col-md-2"><div class="card bg-primary-white text-center mb-3 h-45" id="tempCard"><div class="card-body">Current Temperature<p class="text card-text ' + tempClass + '" id="currentTemperature">' + currentTemperature + '°C</p></div></div><div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard"><div class="card-body">Current Humidity<p class="text card-text ' + humidClass + '" id="currentHumidity">' + currentHumid + '%</p></div></div></div><div class="col-md-5 h-100"><div class="card mb-4"><div class="card-header"><i class="fas fa-chart-area me-1"></i>Temperature History</div><div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div></div></div><div class="col-md-5 h-100"><div class="card mb-4"><div class="card-header"><i class="fas fa-chart-area me-1"></i>Humidity History</div><div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div></div></div></div></div>';
     });
+    document.getElementById("moduleContainer")
 
 
 
