@@ -22,8 +22,8 @@
     </nav>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid p-4 m-3">
-                <div class="card bg-white m-3 px-3 shadow">
+            <div class="container-fluid p-4 my-5">
+                <div class="card bg-white m-4 px-3 shadow">
                     <h1 class="mt-4">Sensor 1
                     </h1>
                     <ol class="breadcrumb mb-4">
