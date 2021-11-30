@@ -1,37 +1,5 @@
 <?php
-function CallAPI($method, $url, $data = false)
-{
-    $curl = curl_init();
 
-    switch ($method) {
-        case "POST":
-            curl_setopt($curl, CURLOPT_POST, 1);
-
-            if ($data)
-                curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-            break;
-        case "get":
-            curl_setopt($curl, CURLOPT_PUT, 1);
-            break;
-        default:
-            if ($data) {
-                $url = sprintf("%s?%s", $url, http_build_query($data));
-            }
-    }
-
-    // Optional Authentication:
-    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-    curl_setopt($curl, CURLOPT_USERPWD, "owais:admin");
-
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-
-    $result = curl_exec($curl);
-
-    curl_close($curl);
-
-    return $result;
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,51 +25,7 @@ function CallAPI($method, $url, $data = false)
     </nav>
     <div id="layoutSidenav_content">
         <main>
-            <div class="container-fluid p-4 my-5">
-                <div class="card bg-white m-4 px-3 shadow">
-                    <h1 class="mt-4">Sensor 1
-                    </h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Location of Sensor 1 </li>
-                    </ol>
-                    <div class="row">
-                        <div class="col-md-2">
-                            <div class="card bg-primary text-white text-center mb-3 h-45" id="tempCard">
-                                <div class="card-body">
-                                    Current Temperature
-
-                                    <p class="text card-text" id="currentTemperature">°C</p>
-                                </div>
-                            </div>
-                            <div class="card bg-primary text-white text-center mb-3 h-45" id="humidCard">
-                                <div class="card-body">
-                                    Current Humidity
-                                    <p class="text card-text" id="currentHumidity">%</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 h-100">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Temperature History
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-5 h-100">
-                            <div class="card mb-4">
-                                <div class="card-header">
-                                    <i class="fas fa-chart-area me-1"></i>
-                                    Humidity History
-                                </div>
-                                <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="container-fluid p-4 my-5" id="moduleContainer">
             </div>
         </main>
 
