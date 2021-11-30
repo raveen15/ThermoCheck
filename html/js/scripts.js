@@ -99,22 +99,34 @@ async function setTempAndHumid() {
     if (currentTemperature < 250) {
         //less than 250 degrees
         document.getElementById("tempCard").classList.add("bg-success")
+        document.getElementById("tempCard").classList.remove("bg-warning")
+        document.getElementById("tempCard").classList.remove("bg-danger")
     } else if (currentTemperature >= 250 && currentTemperature < 300) {
         //greater than 250 degrees but less than 300
         document.getElementById("tempCard").classList.add("bg-warning")
+        document.getElementById("tempCard").classList.remove("bg-success")
+        document.getElementById("tempCard").classList.remove("bg-danger")
     } else {
         //greater than 300 degrees
         document.getElementById("tempCard").classList.add("bg-danger")
+        document.getElementById("tempCard").classList.remove("bg-warning")
+        document.getElementById("tempCard").classList.remove("bg-success")
     }
     if (currentHumid < 50) {
         //less than  %
         document.getElementById("humidCard").classList.add("bg-success")
+        document.getElementById("humidCard").classList.remove("bg-warning")
+        document.getElementById("humidCard").classList.remove("bg-danger")
     } else if (currentHumid >= 50 && currentHumid < 75) {
         //greater than  but less than 
         document.getElementById("humidCard").classList.add("bg-warning")
+        document.getElementById("humidCard").classList.remove("bg-success")
+        document.getElementById("humidCard").classList.remove("bg-danger")
     } else {
         //greater than 
         document.getElementById("humidCard").classList.add("bg-danger")
+        document.getElementById("humidCard").classList.remove("bg-warning")
+        document.getElementById("humidCard").classList.remove("bg-success")
     }
     //set value to currtemp card
     document.getElementById("currentTemperature").innerHTML = currentTemperature + "°C"
