@@ -92,7 +92,7 @@ async function setTempAndHumid() {
     request.setRequestHeader("Authorization", "Basic " + x)
     request.send(null);
     var response = JSON.parse(request.responseText)
-    for (resp in response) {
+    response.forEach(resp => {
         var currentTemperature = resp["temperature"];
         var currentHumid = resp["humidity"];
         console.log(resp);
@@ -132,7 +132,7 @@ async function setTempAndHumid() {
         //set value to currtemp card
         document.getElementById("currentTemperature").innerHTML = currentTemperature + "°C"
         document.getElementById("currentHumidity").innerHTML = currentHumid + "%"
-    }
+    });
 
 
 
