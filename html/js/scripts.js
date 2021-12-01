@@ -42,6 +42,7 @@ var getTable = document.getElementById("myTable");
 //https://ros-temphumid.herokuapp.com/history/?format=json
 async function setTempAndHumid() {
   var innerHTML = "";
+  var sideBarHTML = "";
   //get temp and humid from api
   const ros_temphumi_URL = "https://ros-temphumid.herokuapp.com/?format=json"
   const x = "b3dhaXM6YWRtaW4=";
@@ -101,7 +102,7 @@ async function setTempAndHumid() {
       humidClass = "bg-danger"
     }
     //set value to currtemp card
-    sideBarHTML = '<a class="nav-link" href="#' + title + '"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>' + title + '</a>'
+    sideBarHTML += '<a class="nav-link" href="#' + title + '"><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>' + title + '</a>'
     innerHTML += '<div class="card bg-white m-4 px-3 shadow" id="' + title + '"><h1 class="mt-4">' + title + '</h1><ol class="breadcrumb mb-4"><li class="breadcrumb-item active">' + subtitle + ' </li></ol><div class="row"><div class="col-md-2"><div class="card ' + tempClass + ' text-white text-center mb-3" style="{height=10rem}" id="tempCard"><div class="card-body">Current Temperature<p class="text card-text " id="currentTemperature">' + currentTemperature + '°C</p></div></div><div class="card ' + humidClass + ' text-white text-center mb-3" style = "{height=10rem}" id="humidCard"><div class="card-body">Current Humidity<p class="text card-text " id="currentHumidity">' + currentHumid + '%</p></div></div></div><div class="col-md-6 h-100"><div class="card mb-4"><div class="card-header">History</div><table id="myTable" class="table"><tr><th>Date</th><th>Temperature</th><th>Humidity</th></tr>' + histHTML + '</table></div></div></div></div></div>';
   });
   document.getElementById("moduleContainer").innerHTML = innerHTML
