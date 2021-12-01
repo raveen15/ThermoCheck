@@ -41,10 +41,6 @@ var getTable = document.getElementById("myTable");
 
 //https://ros-temphumid.herokuapp.com/history/?format=json
 async function setTempAndHumid() {
-
-
-  let currentTime = moment().subtract(60, 'seconds');
-
   var innerHTML = "";
   var sideBarHTML = "";
   //get temp and humid from api
@@ -71,6 +67,7 @@ async function setTempAndHumid() {
     requestTwo.setRequestHeader("Authorization", "Basic " + x)
     requestTwo.send(null);
     var responseTwo = JSON.parse(requestTwo.responseText)
+    var x = 0;
     responseTwo.forEach(resp => {
       var titleTwo = resp["name"];
       var currentTemperatureTwo = resp["temperature"];
@@ -80,10 +77,9 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + currentTime + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + moment().subtract(x, 'second') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
-      currentTime.add(1, 'second')
-
+      x++
     });
 
     //change color for bad temp/humid
