@@ -35,7 +35,7 @@ var today = new Date();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 setTempAndHumid();
-setInterval(function () { setTempAndHumid() }, 6000);
+setInterval(function () { setTempAndHumid() }, 60000);
 
 var getTable = document.getElementById("myTable");
 
@@ -77,7 +77,7 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + moment().subtract(k, 'second').format('hh:mm:ss a') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + moment().subtract(k, 'second').format('hh:mm a') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
       k++
     });
