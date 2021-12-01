@@ -41,9 +41,10 @@ var getTable = document.getElementById("myTable");
 
 //https://ros-temphumid.herokuapp.com/history/?format=json
 async function setTempAndHumid() {
-  const d = new Date("");
 
-  let currentTime = d.getTime() - (1000 * 60 * 60);
+
+  let currentTime = moment().subtract(60, 'seconds');
+
   var innerHTML = "";
   var sideBarHTML = "";
   //get temp and humid from api
@@ -79,9 +80,9 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + moment(currentTime).format('hh:mm:ss a') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + currentTime + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
-      currentTime -= (1000 * 60 * 60);
+      currentTime.add(1, 'second')
 
     });
 
