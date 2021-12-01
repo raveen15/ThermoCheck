@@ -59,7 +59,7 @@ async function setTempAndHumid() {
     var currentHumid = resp["humidity"];
     var humidClass = "bg-primary";
     var histHTML = "";
-    var k=0;
+    var k = 0;
     console.log(title, subtitle, currentHumid, currentTemperature);
 
     const ros_temphumi_URLTwo = "https://ros-temphumid.herokuapp.com/history/?format=json"
@@ -77,7 +77,7 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + moment().subtract(k, 'second') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + moment().subtract(k, 'second').format('hh:mm:ss a') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
       k++
     });
