@@ -23,21 +23,32 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand" href="index.html">ThermoCheck</a>
     </nav>
-    <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid p-4 my-5" id="moduleContainer">
-            </div>
-        </main>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav" id="sideBar">
 
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid px-4">
-                <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; ROS Enterprises 2021</div>
+
+                    </div>
                 </div>
-            </div>
-        </footer>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid p-4 my-5" id="moduleContainer">
+                </div>
+            </main>
 
-    </div>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; ROS Enterprises 2021</div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js">
