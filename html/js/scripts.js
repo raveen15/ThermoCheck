@@ -59,6 +59,7 @@ async function setTempAndHumid() {
     var currentHumid = resp["humidity"];
     var humidClass = "bg-primary";
     var histHTML = "";
+    var k=0;
     console.log(title, subtitle, currentHumid, currentTemperature);
 
     const ros_temphumi_URLTwo = "https://ros-temphumid.herokuapp.com/history/?format=json"
@@ -67,7 +68,6 @@ async function setTempAndHumid() {
     requestTwo.setRequestHeader("Authorization", "Basic " + x)
     requestTwo.send(null);
     var responseTwo = JSON.parse(requestTwo.responseText)
-    var x = 0;
     responseTwo.forEach(resp => {
       var titleTwo = resp["name"];
       var currentTemperatureTwo = resp["temperature"];
@@ -77,9 +77,9 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + moment().subtract(x, 'second') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + moment().subtract(k, 'second') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
-      x++
+      k++
     });
 
     //change color for bad temp/humid
