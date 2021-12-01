@@ -41,7 +41,7 @@ var getTable = document.getElementById("myTable");
 
 //https://ros-temphumid.herokuapp.com/history/?format=json
 async function setTempAndHumid() {
-  const d = new Date();
+  const d = new Date("");
 
   let currentTime = d.getTime() - (1000 * 60 * 60);
   var innerHTML = "";
@@ -79,7 +79,7 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + currentTime.toLocaleString() + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + moment(currentTime).format('hh:mm:ss a') + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
       currentTime -= (1000 * 60 * 60);
 
