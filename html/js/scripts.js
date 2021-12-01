@@ -35,12 +35,15 @@ var today = new Date();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 setTempAndHumid();
-setInterval(function () { setTempAndHumid() }, 1000);
+setInterval(function () { setTempAndHumid() }, 6000);
 
 var getTable = document.getElementById("myTable");
 
 //https://ros-temphumid.herokuapp.com/history/?format=json
 async function setTempAndHumid() {
+  const d = new Date();
+
+  let currentTime = d.getTime() - (1000 * 60 * 60);
   var innerHTML = "";
   var sideBarHTML = "";
   //get temp and humid from api
@@ -76,8 +79,10 @@ async function setTempAndHumid() {
 
 
       if (titleTwo == title) {
-        histHTML += "<tr><td>" + date + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
+        histHTML += "<tr><td>" + currentTime.toLocaleString() + "</td><td>" + currentTemperatureTwo + "</td><td>" + currentHumidTwo + "</td></tr>";
       }
+      currentTime -= (1000 * 60 * 60);
+
     });
 
     //change color for bad temp/humid
